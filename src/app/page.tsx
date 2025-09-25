@@ -56,6 +56,7 @@ const Badge = ({ children }: { children: React.ReactNode }) => (
   </span>
 )
 
+
 // ROI Calculator
 function ROICalc() {
   const [jobValue, setJobValue] = React.useState(8000)
