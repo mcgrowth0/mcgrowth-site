@@ -7,15 +7,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 // ---- Helper components ----
-const Container = ({ children }) => (
+const Container = ({ children }: { children: React.ReactNode }) => (
   <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">{children}</div>
 )
 
-const Section = ({ id, className = "", children }) => (
+const Section = ({
+  id,
+  className = "",
+  children,
+}: {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+}) => (
   <section id={id} className={`py-16 sm:py-24 ${className}`}>{children}</section>
 )
 
-const Feature = ({ icon: Icon, title, desc }) => (
+const Feature = ({
+  icon: Icon,
+  title,
+  desc,
+}: {
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  desc: string
+}) => (
   <Card className="rounded-2xl">
     <CardHeader className="space-y-2">
       <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -27,14 +43,14 @@ const Feature = ({ icon: Icon, title, desc }) => (
   </Card>
 )
 
-const Stat = ({ value, label }) => (
+const Stat = ({ value, label }: { value: string | number; label: string }) => (
   <div className="text-center">
     <div className="text-3xl font-bold tracking-tight sm:text-4xl">{value}</div>
     <div className="text-sm text-muted-foreground">{label}</div>
   </div>
 )
 
-const Badge = ({ children }) => (
+const Badge = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium">
     {children}
   </span>
